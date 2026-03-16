@@ -1,0 +1,12 @@
+{
+  "name": "repomind",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "start": "pnpm --filter web start",
+    "cli:dev": "pnpm --filter cli dev",
+    "cli:build": "pnpm --filter cli build"
+  }
+}

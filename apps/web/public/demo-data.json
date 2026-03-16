@@ -1,0 +1,40 @@
+{
+  "id": "demo",
+  "url": "https://github.com/babaswift2005/resumeforge",
+  "name": "resumeforge",
+  "owner": "babaswift2005",
+  "status": "ready",
+  "explanation": "**ResumeForge** is a one-page resume/CV builder with live preview and PDF export. Built with **React** and **Vite**, it lets you enter your details, see a live preview, and save to local storage or export as PDF. Ideal for quickly building a professional resume without leaving the browser.\n\n**Tech stack:** React, Vite, JavaScript, CSS. The app uses React state for form data and a responsive layout for the preview panel.\n\n**To run locally:** Clone the repo, run `npm install` then `npm run dev`, and open the app in your browser.",
+  "fileTree": [
+    { "name": "src", "path": "src", "type": "directory", "children": [
+      { "name": "App.jsx", "path": "src/App.jsx", "type": "file", "language": "JavaScript", "size": 2048 },
+      { "name": "main.jsx", "path": "src/main.jsx", "type": "file", "language": "JavaScript", "size": 512 },
+      { "name": "index.css", "path": "src/index.css", "type": "file", "language": "CSS", "size": 1024 }
+    ]},
+    { "name": "index.html", "path": "index.html", "type": "file", "language": "HTML", "size": 256 },
+    { "name": "package.json", "path": "package.json", "type": "file", "language": "JSON", "size": 512 },
+    { "name": "README.md", "path": "README.md", "type": "file", "language": "Markdown", "size": 384 }
+  ],
+  "stats": {
+    "totalFiles": 14,
+    "analyzedFiles": 12,
+    "languages": { "JavaScript": 7, "Markdown": 2, "JSON": 2, "CSS": 1 },
+    "sizeBytes": 99700
+  },
+  "graph": {
+    "nodes": [
+      { "id": "src/App.jsx", "label": "App.jsx", "path": "src/App.jsx", "language": "JavaScript" },
+      { "id": "src/main.jsx", "label": "main.jsx", "path": "src/main.jsx", "language": "JavaScript" }
+    ],
+    "edges": [
+      { "source": "src/main.jsx", "target": "src/App.jsx" }
+    ]
+  },
+  "createdAt": 1710000000000,
+  "files": [
+    { "id": "f1", "repoId": "demo", "path": "src/App.jsx", "language": "JavaScript", "size": 2048, "summary": "Main React app component: resume form state, live preview, and PDF export logic.", "content": "// App component with form and preview" },
+    { "id": "f2", "repoId": "demo", "path": "src/main.jsx", "language": "JavaScript", "size": 512, "summary": "Entry point that mounts the React app to the DOM.", "content": "import React from 'react'\nimport App from './App'" },
+    { "id": "f3", "repoId": "demo", "path": "package.json", "language": "JSON", "size": 512, "summary": "Project manifest with React and Vite dependencies and scripts.", "content": "{\"name\":\"resumeforge\",\"scripts\":{\"dev\":\"vite\"}}" },
+    { "id": "f4", "repoId": "demo", "path": "README.md", "language": "Markdown", "size": 384, "summary": "Project README with setup and usage instructions.", "content": "# ResumeForge - Resume builder" }
+  ]
+}

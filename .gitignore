@@ -1,0 +1,26 @@
+node_modules/
+.next/
+out/
+dist/
+build/
+.env
+.env.local
+.env.*.local
+
+# RepoMind data directory (cloned repos + analysis)
+data/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
