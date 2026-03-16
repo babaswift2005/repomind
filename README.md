@@ -7,8 +7,6 @@
 
 **Author · Owner:** [Baba Swift](https://github.com/babaswift2005) ([@babaswift2005](https://github.com/babaswift2005))
 
-**→ Try the live demo** — after you deploy (see below), use the **Try the live demo** link on the home page to explore the dashboard with a sample repo. Full analysis runs only when you clone and run locally.
-
 ---
 
 ## ✨ Features
@@ -23,6 +21,12 @@
 ---
 
 ## 🚀 Quick Start
+
+### How RepoMind runs
+
+- **RepoMind is designed to run locally on your machine.**
+- It uses **Ollama** to run AI models on your own hardware, so there is **no hosted online version** of the analyzer.
+- You can deploy the UI anywhere if you want, but **actual analysis and AI features require Ollama running locally**.
 
 ### Prerequisites
 
@@ -168,28 +172,6 @@ Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines
 3. Commit changes: `git commit -m 'feat: add amazing feature'`
 4. Push: `git push origin feat/amazing-feature`
 5. Open a Pull Request
-
----
-
-## 🌐 Live website & deployment
-
-RepoMind needs a **Node.js server** and **Ollama** to analyze repos, so it can’t run as a static site like GitHub Pages. You can still put it online so others can try it:
-
-### Option 1: Deploy to Vercel (recommended)
-
-1. Push the repo to GitHub: `github.com/babaswift2005/repomind`
-2. Go to [vercel.com](https://vercel.com) → **Add New Project** → Import `babaswift2005/repomind`
-3. **Root Directory:** leave default or set to repo root
-4. **Build:** Framework preset **Next.js**; build command `cd apps/web && npm run build`; output directory `apps/web/.next` (or leave Vercel’s defaults and set root to `apps/web` if you prefer)
-5. Deploy. Your app will be live at `https://repomind-xxx.vercel.app`
-
-On the live site, **analysis won’t run** (no Ollama in the cloud). Visitors can use **Try the live demo** to open a pre-loaded sample repo and explore the UI. To analyze their own repos, they clone and run RepoMind locally.
-
-**Simpler Vercel setup:** set **Root Directory** to `apps/web` in the Vercel project settings. Then Vercel will detect Next.js and build automatically.
-
-### Option 2: Run locally and share
-
-Run `npm run dev` and share your local URL (e.g. with ngrok) so others can use your instance temporarily.
 
 ---
 
