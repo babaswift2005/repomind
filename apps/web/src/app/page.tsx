@@ -1,8 +1,7 @@
-import Link from 'next/link'
 import { AnalyzeForm } from '@/components/AnalyzeForm'
 import { OllamaStatus } from '@/components/OllamaStatus'
 import { RepoHistory } from '@/components/RepoHistory'
-import { Brain, MessageSquare, GitBranch, FileSearch, BookOpen, Terminal, Play } from 'lucide-react'
+import { Brain, MessageSquare, GitBranch, FileSearch, BookOpen, Terminal } from 'lucide-react'
 
 const FEATURES = [
   {
@@ -80,16 +79,7 @@ export default function Home() {
               <AnalyzeForm />
             </div>
 
-            <p className="text-sm text-muted-foreground mt-2">
-              No setup?{' '}
-              <Link href="/analyze/demo" className="text-primary font-medium hover:underline inline-flex items-center gap-1">
-                <Play className="h-3.5 w-3.5" />
-                Try the live demo
-              </Link>
-              {' '}— explore the dashboard with a sample repo.
-            </p>
-
-            <div className="mt-2">
+            <div className="mt-4">
               <OllamaStatus />
             </div>
           </div>

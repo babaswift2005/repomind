@@ -7,7 +7,6 @@ import {
   ArrowLeft,
   Brain,
   ExternalLink,
-  Loader2,
   AlertCircle,
   GitBranch,
   MessageSquare,
@@ -36,20 +35,11 @@ export default function AnalyzePage() {
   const [data, setData] = useState<PageData | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const isDemo = id === 'demo'
 
   useEffect(() => {
     if (!id) {
       setLoading(false)
       setError('Missing repository ID')
-      return
-    }
-    if (isDemo) {
-      fetch('/demo-data.json')
-        .then((r) => r.json())
-        .then((d) => setData(d as PageData))
-        .catch((e) => setError(e.message))
-        .finally(() => setLoading(false))
       return
     }
     fetch(`/api/repos/${id}`)
@@ -60,7 +50,7 @@ export default function AnalyzePage() {
       })
       .catch((e) => setError(e.message))
       .finally(() => setLoading(false))
-  }, [id, isDemo])
+  }, [id])
 
   if (!id) {
     return (
@@ -115,12 +105,6 @@ export default function AnalyzePage() {
 
   return (
     <div className="container max-w-6xl mx-auto px-4 py-6 space-y-6 animate-fade-in">
-      {isDemo && (
-        <div className="rounded-lg border border-primary/40 bg-primary/10 px-4 py-3 text-sm text-primary flex items-center justify-between gap-4 flex-wrap">
-          <span>You’re viewing the <strong>live demo</strong> with a sample repo. To analyze your own repositories, clone RepoMind and run it locally.</span>
-          <Link href="/" className="text-primary font-medium hover:underline shrink-0">Back to home</Link>
-        </div>
-      )}
       {/* Breadcrumb + Header */}
       <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-0">
         <Button asChild variant="ghost" size="sm" className="self-start -ml-2 text-muted-foreground">
@@ -202,27 +186,11 @@ export default function AnalyzePage() {
           </TabsContent>
 
           <TabsContent value="chat">
-            {isDemo ? (
-              <div className="rounded-xl border border-border/60 bg-muted/20 p-8 text-center text-muted-foreground">
-                <MessageSquare className="h-10 w-10 mx-auto mb-3 opacity-50" />
-                <p className="font-medium">Chat is available when you run RepoMind locally.</p>
-                <p className="text-sm mt-1">Clone the repo and start the app to ask questions about any codebase.</p>
-              </div>
-            ) : (
-              <ChatInterface repoId={data.id} repoName={repoFullName} />
-            )}
+            <ChatInterface repoId={data.id} repoName={repoFullName} />
           </TabsContent>
 
           <TabsContent value="docs">
-            {isDemo ? (
-              <div className="rounded-xl border border-border/60 bg-muted/20 p-8 text-center text-muted-foreground">
-                <BookOpen className="h-10 w-10 mx-auto mb-3 opacity-50" />
-                <p className="font-medium">Doc generation is available when you run RepoMind locally.</p>
-                <p className="text-sm mt-1">Clone the repo and run it to generate README and onboarding docs.</p>
-              </div>
-            ) : (
-              <DocGenerator repoId={data.id} repoName={repoFullName} />
-            )}
+            <DocGenerator repoId={data.id} repoName={repoFullName} />
           </TabsContent>
         </div>
       </Tabs>
